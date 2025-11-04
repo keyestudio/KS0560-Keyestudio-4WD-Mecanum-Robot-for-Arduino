@@ -1,0 +1,90 @@
+4. Kidsblock Tutorial
+=====================
+
+4.1 Data download
+-----------------
+
+Scratch information contains project ,please click to download for
+follow-up study.
+
+Data download：  :download:`Data download <./Kidsblock.7z>`
+
+APP download:
+
+**Android:** https://xiazai.keyesrobot.cn/APP/Mecanum%20Robot.apk
+
+**Google:**
+https://play.google.com/store/apps/details?id=com.keyestudio.mecanum_robot
+
+**Apple Store:**
+https://apps.apple.com/cn/app/mecanum-robot/id1582947578
+
+4.2 Software installation of Windows System
+-------------------------------------------
+
+1. Download kidsblock: https://xiazai.keyesrobot.cn/KidsBlock.exe
+
+|image1|
+
+2. software installation
+
+|image2|
+
+4.3 Software installation of Mac System
+---------------------------------------
+
+1. Download kidsblock: https://xiazai.keyesrobot.cn/KidsBlock.dmg
+
+|image3|
+
+4.4 Use KidsBlock
+-----------------
+
+1、operating software
+
+First connect the development board to the computer
+
+|image4|
+
+2、If you are unable to upload the code, please refer to the following
+tutorial to install the driver (optional reading)
+
+Install driver（Windows)
+
+|image5|
+
+Install driver（MAC)
+
+|image6|
+
+Note: If your development board is not the driver of CH340, there will
+be a prompt of CH340 failure as shown in the picture, please close the
+interface directly and upload the code.
+
+4.5 Project
+-----------
+
+.. toctree::
+    :maxdepth: 1
+
+
+    Project/Project1
+    Project/Project2
+    Project/Project3
+    Project/Project4
+    Project/Project5
+    Project/Project6
+    Project/Project7
+    Project/Project8
+    Project/Project9
+    Project/Project10
+    Project/Project11
+    Project/Project12
+
+
+.. |image1| image:: media/1.gif
+.. |image2| image:: media/2.gif
+.. |image3| image:: media/3.gif
+.. |image4| image:: media/1-1761982896243-1.gif
+.. |image5| image:: media/5.gif
+.. |image6| image:: media/6.gif
