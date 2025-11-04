@@ -45,7 +45,7 @@ void loop()
 
 First,make sure the library files are installed,otherwise the code will fail to compile. Here we use the library file “Adafruit_NeoPixel”, please refer to the development environment configuration for installation. After up loading the code and turn the DIP switch to the ON end and power on, we can see that the 42812 LEDs will respectively be red, green, blue and white.
 
-**5.CodeExplanation**
+**5.Code Explanation**
 
 ```
 #include<Adafruit_NeoPixel.h> //Importthefilergb_2818

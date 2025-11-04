@@ -71,7 +71,7 @@ void loop()
 
 After uploading the test code successfully, turn the DIP switch to ON end and power up and the smart car will drive along the black line.
 
-**5.CodeExplanation**
+**5.Code Explanation**
 
 ```
 #define Sensor Left A0  //Define the pin

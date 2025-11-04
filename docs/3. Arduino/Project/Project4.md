@@ -52,7 +52,7 @@ void loop()
 
 First make sure the library files are installed, otherwise the code will fail to compile. Here we use the library file MecanumCar_v2, please refer to the development environment configuration for installation. After compiling and uploading the code, turn the DIP switch to the ON end and power on, and we can see that the car goes forward for 2s,goes back for 2s, turns left for 2s,turns right for 2s and then stops for 1s.
 
-**5.CodeExplanation**
+**5.Code Explanation**
 
 ```
 #include "MecanumCar_v2.h"  //Import the MecanumCar_v2 file.

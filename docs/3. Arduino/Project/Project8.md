@@ -76,7 +76,7 @@ int get_distance(void)  //Ultrasonic detects the distance
 
 After uploading the code successfully, turn the DIP switch to ON end and power on, then the car will follow in a straight line. We put the palm of our hand in front of the ultrasonic, slowly forward, the car will follow our palm to move.
 
-**5.CodeExplanation**
+**5.Code Explanation**
 
 ```
 myservo.write(90); //Make the servo rotate to 90 degrees.

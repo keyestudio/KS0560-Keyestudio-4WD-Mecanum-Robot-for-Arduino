@@ -67,7 +67,7 @@ void servopulse(int pin, int myangle) //Impulse function
 
 After compiling and uploading the code,then turn the DIP switch to the ON end and power on, we will see that the servo will turn back and forth from 0 degrees to 180 degrees.
 
-**5.CodeExplanation**
+**5.Code Explanation**
 
 ```
 #define servo_pin 9   //Define the pin number of the servo to  D9.
