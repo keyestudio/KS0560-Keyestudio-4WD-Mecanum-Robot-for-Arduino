@@ -29,20 +29,21 @@ The MCU is decoded by the received 01 signal to determine which key to press. In
 **3.Test Code**
 
 ```
-#include "ir.h"
-IR IRreceive(A3);//IR receiver is connected to A3
+#include <IRremote.h>
 
-void setup()
-{
-  Serial.begin(9600); //Set baud rate to 9600
+int RECV_PIN = A3; //IR receiver is connected to A3
+IRrecv irrecv(RECV_PIN);
+decode_results results;
+
+void setup(){
+  Serial.begin(9600); //Set the baud rate to 9600
+  irrecv.enableIRIn(); 
 }
 
-void loop() 
-{
-  int key = IRreceive.getKey();
-  if (key != -1) 
-  {
-    Serial.println(key);
+void loop() {
+  if (irrecv.decode(&results)) {
+  Serial.println(results.value, HEX);
+  irrecv.resume(); // Receive the next value
   }
 }
 ```
@@ -58,66 +59,64 @@ After uploading the test code successfully, turn the DIP switch to the ON end an
 **5.Code Explanation**
 
 ```
-#include"ir.h"  // Import the library file of the IR receiver.
+#include <IRremote.h> // Import the library file of the IR receiver.
 ```
 
 ```
 IR IRreceive(A3);   // The IR receiver is connected to A3
+```   
+
+```
+if (results.value == 0xFF02FD && flag == true) //The value for turning on the light
+{
+  mecanumCar.right_led(1);
+  mecanumCar.left_led(1);
+  flag = false;
+}
 ```
 
 ```
-intkey=IRreceive.getKey(); // Define an integer variable to save the key value of the IR remote control.
-```
-
-```
-if(key!=-1)   // If the IR remote control signal is not received,the returned key value is -1,so we print when the value is not equal to -1.
-```
-
-```
-Serial.println(key);  //Newline print the key value.
-```
-
-```
-if(key==64&&flag==true)
-   flag=false;
-// If the OK key is pressed and flag is true,set flag to false for next extinction.
-```
-
-```
-elseif(key==64&&flag==false)
-	flag=true;
-//If the OK key is pressed and the flag is false, set flag to true for next lighting.
+else if (results.value == 0xFF02FD && flag == false) //The value for turning off the lights
+{
+  mecanumCar.right_led(0);
+ mecanumCar.left_led(0);
+ flag = true;
+}
 ```
 
 **6.Expanded Project Use a OK button to control the seven-color LED**
 
 ```
-#include "MecanumCar_v2.h"
+#include <MecanumCar_v2.h>
 mecanumCar mecanumCar(3, 2);  //sda-->D3,scl-->D2
-#include "ir.h"
+#include <IRremote.h>
 
-IR IRreceive(A3);//IR receiver is connected to A3
+int RECV_PIN = A3;
+IRrecv irrecv(RECV_PIN);
+decode_results results;
 bool flag = true;
 
-void setup()
-{
-  mecanumCar.Init();//Initialize the motors and the seven-color LEDs
+void setup(){
+  mecanumCar.Init(); //Initialize the motor and the color light driver
+  irrecv.enableIRIn(); 
 }
 
-void loop() 
-{
-  int key = IRreceive.getKey();
-  if (key == 64 && flag == true) 
-  {
+void loop() {
+  if (irrecv.decode(&results)) {
+    Serial.println(results.value, HEX);
+    if (results.value == 0xFF02FD && flag == true) //The value for turning on the light
+    {
     mecanumCar.right_led(1);
     mecanumCar.left_led(1);
     flag = false;
-  }
-  else if (key == 64 && flag == false) 
-  {
+    }
+     else if (results.value == 0xFF02FD && flag == false) //The value for turning off the lights
+    {
     mecanumCar.right_led(0);
     mecanumCar.left_led(0);
     flag = true;
+    }
+    irrecv.resume(); // Receive the next value
   }
 }
 ```
