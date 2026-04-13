@@ -146,7 +146,6 @@ speed_Lower_R   //Represents the speed values of the four motors.Range is 0~255
 #include "MecanumCar_v2.h"
 #include <Adafruit_NeoPixel.h>
 #include "Servo.h"
-#include "ir.h"
 
 mecanumCar mecanumCar(3, 2);  //sda-->D3,scl-->D2
 //Creat a class called rgb_2812 to control rgb,there are four LEDs and the pins are connected to D10
